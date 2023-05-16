@@ -1,0 +1,12 @@
+version: '3'
+services:
+  check_ipc_permissions:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+      args: 
+        - USER_NAME=bor
+        - USER_ID=110
+    volumes:
+      - /var/lib/bor/bor.ipc:/path/in/container/file.ipc
